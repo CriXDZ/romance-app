@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-romantic: "Protest Riot", sans-serif;
+
+  /* Colors */
+  --color-romantic-pink: #d6336c;
+  --color-romantic-hover: #ff69b4;
+  --color-romantic-bg: #fff0f5;
+  --color-romantic-light: #ffafbd;
+  --color-romantic-peach: #ffc3a0;
+
+  /* Animations */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  --animate-fade-in: fade-in 1s ease-out;
+
+  @keyframes background-anim {
+    0% {
+      background-color: #ffafbd;
+    }
+    100% {
+      background-color: #ffc3a0;
+    }
+  }
+  --animate-bg-pulse: background-anim 20s infinite alternate ease-in-out;
+}
+
+/* Global Base Styles */
+@layer base {
+  body {
+    @apply font-romantic text-romantic-pink bg-romantic-light animate-bg-pulse m-0 flex min-h-screen items-center justify-center;
+  }
+}
+
+/* Custom Utilities if needed */
+@layer utilities {
+  .glass-card {
+    @apply border border-[rgba(255,255,255,0.3)] bg-[rgba(255,255,255,0.4)] backdrop-blur-md;
+  }
+}

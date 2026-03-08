@@ -30,12 +30,13 @@ export const MusicPlayer = () => {
   }, [isMuted]);
 
   return (
-    <div className="music-container">
+    <div className="fixed top-4 right-4 z-[9999]">
       <audio ref={audioRef} src={musicFile} loop />
       <button
         id="muteButton"
         onClick={toggleMute}
         aria-label="Control de música"
+        className="text-romantic-pink hover:text-romantic-hover flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-white text-2xl shadow-md transition-all hover:scale-105"
       >
         {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
       </button>

@@ -22,11 +22,19 @@ export const ProposalFlow = ({ setResponseMessage }) => {
   };
 
   return (
-    <div className="buttons">
-      <button id="yesButton" onClick={handleYesClick}>
+    <div className="mt-6 flex flex-row justify-center gap-4">
+      <button
+        id="yesButton"
+        onClick={handleYesClick}
+        className="bg-romantic-pink hover:bg-romantic-hover cursor-pointer rounded-xl px-10 py-4 text-xl font-bold text-white shadow-lg transition-colors active:scale-95"
+      >
         Sí
       </button>
-      <button id="noButton" onClick={handleNoClick}>
+      <button
+        id="noButton"
+        onClick={handleNoClick}
+        className="bg-romantic-pink hover:bg-romantic-hover translate-y-0 cursor-pointer rounded-xl px-10 py-4 text-xl font-bold text-white shadow-lg transition-colors active:scale-95"
+      >
         No
       </button>
     </div>
