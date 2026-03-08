@@ -1,0 +1,9 @@
+node_modules
+dist
+build
+.anget
+.agents
+.gemini
+package-lock.json
+yarn.lock
+public

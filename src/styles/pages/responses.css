@@ -1,0 +1,21 @@
+.yes-response {
+  width: 32em;
+  height: 22em;
+  margin-top: -20px;
+  margin-bottom: -5px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.yes-message {
+  font-size: 30px;
+}
+
+.no-response {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.no-message {
+  font-size: 25px;
+}
