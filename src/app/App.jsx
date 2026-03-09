@@ -17,6 +17,23 @@ function App() {
 
   return (
     <>
+      {/* Capa de fondo fija e independiente para evitar romper el layout */}
+      <motion.div
+        animate={{
+          backgroundColor: [
+            "#8b5cf6", // Morado principal
+            "#f97316", // Naranja cálido
+            "#ef4444", // Rojo sutil
+            "#8b5cf6", // Bucle de vuelta a morado
+          ],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="pointer-events-none fixed inset-0 z-[-1]"
+      />
       <MusicPlayer />
       <Router>
         <Routes>

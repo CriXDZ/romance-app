@@ -58,7 +58,9 @@
 /* Global Base Styles */
 @layer base {
   body {
-    @apply font-romantic text-romantic-pink bg-romantic-light animate-bg-pulse m-0 flex min-h-screen items-center justify-center;
+    @apply font-romantic m-0 flex min-h-screen w-full items-center justify-center overflow-x-hidden bg-transparent;
+    margin: 0;
+    padding: 0;
   }
 }
 

@@ -59,7 +59,7 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
         onClick={handleOpen}
       >
         {/* Envelope Back */}
-        <div className="border-romantic-pink/20 absolute inset-0 z-0 rounded-lg border bg-[#f4d0d0] shadow-xl"></div>
+        <div className="border-romantic-purple/10 absolute inset-0 z-0 rounded-2xl border bg-[#fdfaff] shadow-xl"></div>
 
         {/* Letter Inside */}
         <motion.div
@@ -105,9 +105,9 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.6 }}
                   onClick={handleContinue}
-                  className="bg-romantic-purple hover:bg-romantic-hover-purple mt-4 rounded-full px-8 py-2.5 font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:animate-pulse hover:shadow-[0_10px_25px_rgba(124,58,237,0.4)] active:scale-95"
+                  className="bg-romantic-purple hover:bg-romantic-hover-purple mt-4 rounded-full px-10 py-3 font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:animate-pulse hover:shadow-[0_10px_25px_rgba(124,58,237,0.4)] active:scale-95"
                 >
-                  Leer carta
+                  ¡Vamos!
                 </motion.button>
               )}
             </AnimatePresence>
@@ -118,19 +118,17 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
         <div className="pointer-events-none absolute inset-0 z-30">
           {/* Left Flap */}
           <div
-            className="border-romantic-pink/10 absolute top-0 bottom-0 left-0 w-1/2 border-t border-r bg-[#f8e0e0] shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
+            className="border-romantic-purple/5 absolute top-0 bottom-0 left-0 w-1/2 rounded-l-2xl border-t border-r bg-[#fbf8ff] shadow-[2px_0_5px_rgba(0,0,0,0.03)]"
             style={{ clipPath: "polygon(0 0, 100% 50%, 0 100%)" }}
           ></div>
           {/* Right Flap */}
-          <div className="border-romantic-pink/10 absolute top-0 right-0 bottom-0 w-1/2 border-t border-l bg-[#f6dade] shadow-[-2px_0_5px_rgba(0,0,0,0.05)]"></div>
-          {/* Right Flap again with clip path - merge into one */}
           <div
-            className="border-romantic-pink/10 absolute top-0 right-0 bottom-0 w-1/2 border-t border-l bg-[#f6dade] shadow-[-2px_0_5px_rgba(0,0,0,0.05)]"
+            className="border-romantic-purple/5 absolute top-0 right-0 bottom-0 w-1/2 rounded-r-2xl border-t border-l bg-[#fbf8ff] shadow-[-2px_0_5px_rgba(0,0,0,0.03)]"
             style={{ clipPath: "polygon(100% 0, 0 50%, 100% 100%)" }}
           ></div>
           {/* Bottom Flap */}
           <div
-            className="border-romantic-pink/10 absolute bottom-0 left-0 h-1/2 w-full border-t bg-[#f9e5e5] shadow-[0_-2px_5px_rgba(0,0,0,0.05)]"
+            className="border-romantic-purple/5 absolute bottom-0 left-0 h-1/2 w-full rounded-b-2xl border-t bg-[#f7f4ff] shadow-[0_-2px_5px_rgba(0,0,0,0.03)]"
             style={{ clipPath: "polygon(0 100%, 50% 0, 100% 100%)" }}
           ></div>
         </div>
@@ -145,7 +143,7 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
         >
           {/* Forma triangular de la solapa con ClipPath */}
           <div
-            className="border-romantic-pink/20 absolute inset-0 border-b bg-[#f2c6c6] shadow-[0_3px_6px_rgba(0,0,0,0.1)]"
+            className="border-romantic-purple/10 absolute inset-0 rounded-t-2xl border-b bg-[#fdfaff] shadow-[0_3px_6px_rgba(0,0,0,0.05)]"
             style={{ clipPath: "polygon(0 0, 50% 100%, 100% 0)" }}
           />
 
