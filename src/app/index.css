@@ -53,12 +53,26 @@
     }
   }
   --animate-bg-pulse: background-anim 20s infinite alternate ease-in-out;
+  @keyframes sway {
+    0%,
+    100% {
+      transform: translateX(0) rotate(0);
+    }
+    25% {
+      transform: translateX(5px) rotate(1deg);
+    }
+    75% {
+      transform: translateX(-5px) rotate(-1deg);
+    }
+  }
+  --animate-sway: sway 4s infinite ease-in-out;
 }
 
 /* Global Base Styles */
 @layer base {
   body {
-    @apply font-romantic m-0 flex min-h-screen w-full items-center justify-center overflow-x-hidden bg-transparent;
+    @apply font-romantic m-0 flex min-h-[100dvh] w-full items-center justify-center overflow-x-hidden bg-[#8b5cf6];
+    overscroll-behavior-y: none;
     margin: 0;
     padding: 0;
   }

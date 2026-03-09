@@ -43,9 +43,9 @@ export const RomanticContent = () => {
         </div>
       </div>
 
-      <h2 className="font-romantic text-romantic-purple animate-heartbeat mt-8 max-w-lg text-3xl tracking-tight text-balance drop-shadow-md md:text-5xl">
+      <h2 className="font-romantic text-romantic-purple animate-sway mt-8 max-w-lg text-2xl tracking-tight text-balance drop-shadow-md md:text-4xl">
         ¿Me harías el honor de dejar que te cuide y te ame oficialmente, para
-        empezar a construir hoy mismo nuestro &quot;siempre&quot;?
+        empezar a construir hoy mismo nuestro &quot;para siempre&quot;?
       </h2>
 
       <div className="relative mt-4">

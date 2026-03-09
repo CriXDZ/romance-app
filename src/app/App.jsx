@@ -32,7 +32,8 @@ function App() {
           repeat: Infinity,
           ease: "linear",
         }}
-        className="pointer-events-none fixed inset-0 z-[-1]"
+        className="pointer-events-none fixed inset-0 z-[-1] min-h-[100dvh] w-full"
+        style={{ willChange: "background-color" }}
       />
       <MusicPlayer />
       <Router>

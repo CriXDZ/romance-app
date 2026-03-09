@@ -59,7 +59,7 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
         onClick={handleOpen}
       >
         {/* Envelope Back */}
-        <div className="border-romantic-purple/10 absolute inset-0 z-0 rounded-2xl border bg-[#fdfaff] shadow-xl"></div>
+        <div className="border-romantic-purple/30 absolute inset-0 z-0 rounded-2xl border bg-[#fdfaff] shadow-xl"></div>
 
         {/* Letter Inside */}
         <motion.div
@@ -118,17 +118,17 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
         <div className="pointer-events-none absolute inset-0 z-30">
           {/* Left Flap */}
           <div
-            className="border-romantic-purple/5 absolute top-0 bottom-0 left-0 w-1/2 rounded-l-2xl border-t border-r bg-[#fbf8ff] shadow-[2px_0_5px_rgba(0,0,0,0.03)]"
+            className="border-romantic-purple/20 absolute top-0 bottom-0 left-0 w-1/2 rounded-l-2xl border-t border-r bg-[#fbf8ff] shadow-[2px_0_10px_rgba(0,0,0,0.04)]"
             style={{ clipPath: "polygon(0 0, 100% 50%, 0 100%)" }}
           ></div>
           {/* Right Flap */}
           <div
-            className="border-romantic-purple/5 absolute top-0 right-0 bottom-0 w-1/2 rounded-r-2xl border-t border-l bg-[#fbf8ff] shadow-[-2px_0_5px_rgba(0,0,0,0.03)]"
+            className="border-romantic-purple/20 absolute top-0 right-0 bottom-0 w-1/2 rounded-r-2xl border-t border-l bg-[#fbf8ff] shadow-[-2px_0_10px_rgba(0,0,0,0.04)]"
             style={{ clipPath: "polygon(100% 0, 0 50%, 100% 100%)" }}
           ></div>
           {/* Bottom Flap */}
           <div
-            className="border-romantic-purple/5 absolute bottom-0 left-0 h-1/2 w-full rounded-b-2xl border-t bg-[#f7f4ff] shadow-[0_-2px_5px_rgba(0,0,0,0.03)]"
+            className="border-romantic-purple/20 absolute bottom-0 left-0 h-1/2 w-full rounded-b-2xl border-t bg-[#f7f4ff] shadow-[0_-4px_10px_rgba(0,0,0,0.04)]"
             style={{ clipPath: "polygon(0 100%, 50% 0, 100% 100%)" }}
           ></div>
         </div>
@@ -143,7 +143,7 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
         >
           {/* Forma triangular de la solapa con ClipPath */}
           <div
-            className="border-romantic-purple/10 absolute inset-0 rounded-t-2xl border-b bg-[#fdfaff] shadow-[0_3px_6px_rgba(0,0,0,0.05)]"
+            className="border-romantic-purple/25 absolute inset-0 rounded-t-2xl border-b bg-[#fdfaff] shadow-[0_4px_12px_rgba(0,0,0,0.06)]"
             style={{ clipPath: "polygon(0 0, 50% 100%, 100% 0)" }}
           />
 

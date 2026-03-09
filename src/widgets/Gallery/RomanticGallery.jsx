@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaHeart } from "react-icons/fa";
 
 import picture1 from "@shared/assets/img/Picture01.webp";
 import picture2 from "@shared/assets/img/Picture02.webp";
@@ -37,9 +38,9 @@ export const RomanticGallery = () => {
                   style={{ transformOrigin: "top center" }}
                   onClick={() => setLightboxSrc(src)}
                 >
-                  {/* Pin conectando a la cuerda */}
+                  {/* Pin conectando a la cuerda - Gancho con sombra proyectada */}
                   <div
-                    className="bg-romantic-purple absolute top-[-10px] z-30 flex h-6 w-6 items-center justify-center rounded-full border-[3px] border-white shadow-md"
+                    className="absolute top-[-14px] z-30 flex h-8 w-8 items-center justify-center"
                     style={{
                       [isRight ? "left" : "right"]: "18%",
                       transform: isRight
@@ -47,7 +48,12 @@ export const RomanticGallery = () => {
                         : "translateX(50%)",
                     }}
                   >
-                    <div className="h-1.5 w-1.5 rounded-full bg-white/50"></div>
+                    {/* El "gancho" que envuelve la cuerda */}
+                    <div className="bg-romantic-purple/80 absolute inset-x-0 top-1/2 h-1 w-full -translate-y-1/2 rounded-full blur-[0.5px]"></div>
+                    {/* La bolita morada (Pin Principal) */}
+                    <div className="bg-romantic-purple relative flex h-7 w-7 items-center justify-center rounded-full border-[3px] border-white shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
+                      <div className="h-2 w-2 rounded-full bg-white/40 blur-[1px]"></div>
+                    </div>
                   </div>
 
                   <img
@@ -57,9 +63,11 @@ export const RomanticGallery = () => {
                     className="pointer-events-none aspect-[4/5] w-full rounded-lg object-cover shadow-inner sm:aspect-square"
                   />
 
-                  {/* Etiqueta / Decoración suave */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-2 text-center font-sans text-[11px] text-gray-400 opacity-60">
-                    Toca para ampliar 🔍
+                  {/* Pie de foto con decoración de corazón */}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-2 flex items-center justify-center gap-1.5 opacity-60">
+                    <FaHeart className="text-romantic-purple text-[10px]" />
+                    <div className="h-0.5 w-6 rounded-full bg-gray-200" />
+                    <FaHeart className="text-romantic-purple text-[10px]" />
                   </div>
                 </div>
               </div>
