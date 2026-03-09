@@ -1,12 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
 @import "tailwindcss";
 
 @theme {
   /* Fonts */
   --font-romantic: "Protest Riot", sans-serif;
 
-  /* Colors */
   --color-romantic-pink: #d6336c;
+  --color-romantic-purple: #8b5cf6; /* Tonos más claros y amigables para una app romántica */
   --color-romantic-hover: #ff69b4;
+  --color-romantic-hover-purple: #7c3aed;
   --color-romantic-bg: #fff0f5;
   --color-romantic-light: #ffafbd;
   --color-romantic-peach: #ffc3a0;
@@ -22,12 +24,32 @@
   }
   --animate-fade-in: fade-in 1s ease-out;
 
+  @keyframes heartbeat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    15% {
+      transform: scale(1.08); /* Primer latido */
+    }
+    30% {
+      transform: scale(1);
+    }
+    45% {
+      transform: scale(1.08); /* Segundo latido */
+    }
+    60% {
+      transform: scale(1);
+    }
+  }
+  --animate-heartbeat: heartbeat 1.5s infinite ease-in-out;
+
   @keyframes background-anim {
     0% {
-      background-color: #ffafbd;
+      background-color: #a855f7; /* Morado claro intermedio (purple-500) */
     }
     100% {
-      background-color: #ffc3a0;
+      background-color: #4c1d95; /* Morado oscuro profundo pero visible (purple-900) */
     }
   }
   --animate-bg-pulse: background-anim 20s infinite alternate ease-in-out;

@@ -63,12 +63,12 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
 
         {/* Letter Inside */}
         <motion.div
-          className="absolute right-[10px] left-[10px] z-10 flex flex-col items-center justify-center rounded-md bg-white p-4 text-center shadow-md"
-          initial={{ top: "10px", height: "200px", zIndex: 10 }}
+          className="absolute right-[10px] left-[10px] z-[40] flex flex-col items-center justify-center rounded-md bg-white p-4 text-center shadow-md"
+          initial={{ top: "10px", height: "200px" }}
           animate={
             isLetterVisible
               ? {
-                  top: "-180px",
+                  top: "-50px", // CENTRADO: Cubre perfectamente la unión inferior del sobre
                   height: "320px",
                   scale: 1.05,
                   zIndex: 50,
@@ -84,9 +84,9 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
             damping: 15,
           }}
         >
-          <div className="border-romantic-pink/30 flex h-full w-full flex-col items-center justify-center gap-2 rounded border-2 border-dashed p-4">
-            <FaHeart className="text-romantic-pink mb-1 animate-pulse text-3xl" />
-            <h2 className="font-romantic text-romantic-pink text-xl">
+          <div className="border-romantic-purple/30 flex h-full w-full flex-col items-center justify-center gap-2 rounded border-2 border-dashed p-4">
+            <FaHeart className="text-romantic-purple mb-1 animate-pulse text-3xl" />
+            <h2 className="font-romantic text-romantic-purple text-xl">
               Para ti...
             </h2>
             <p className="max-w-[200px] text-sm leading-relaxed font-medium text-gray-600">
@@ -100,7 +100,7 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.6 }}
                   onClick={handleContinue}
-                  className="bg-romantic-pink hover:bg-romantic-hover mt-4 rounded-full px-8 py-2.5 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 active:scale-95"
+                  className="bg-romantic-purple hover:bg-romantic-hover-purple mt-4 rounded-full px-8 py-2.5 font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:animate-pulse hover:shadow-[0_10px_25px_rgba(124,58,237,0.4)] active:scale-95"
                 >
                   Leer carta
                 </motion.button>
@@ -130,20 +130,23 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
           ></div>
         </div>
 
-        {/* Envelope Top Flap */}
+        {/* Envelope Top Flap Wrapper (No ClipPath aquí para no hundir/recortar el sello) */}
         <motion.div
-          className="border-romantic-pink/20 absolute top-0 left-0 flex h-[120px] w-full origin-top justify-center border-b bg-[#f2c6c6] shadow-[0_3px_6px_rgba(0,0,0,0.1)]"
-          style={{
-            clipPath: "polygon(0 0, 50% 100%, 100% 0)",
-            backfaceVisibility: "hidden",
-          }}
+          className="absolute top-0 left-0 flex h-[120px] w-full origin-top justify-center"
+          style={{ backfaceVisibility: "hidden" }}
           initial={{ rotateX: 0 }}
           animate={{ rotateX: isOpened ? 180 : 0, zIndex: isOpened ? 20 : 40 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
-          {/* Wax Seal */}
+          {/* Forma triangular de la solapa con ClipPath */}
+          <div
+            className="border-romantic-pink/20 absolute inset-0 border-b bg-[#f2c6c6] shadow-[0_3px_6px_rgba(0,0,0,0.1)]"
+            style={{ clipPath: "polygon(0 0, 50% 100%, 100% 0)" }}
+          />
+
+          {/* Wax Seal Protegido de Recorte (Not clipped by polygon) */}
           <motion.div
-            className="absolute bottom-0 flex h-12 w-12 translate-y-1/2 items-center justify-center rounded-full border-2 border-red-700/50 bg-red-500 shadow-md"
+            className="bg-romantic-purple absolute bottom-0 z-[60] flex h-12 w-12 translate-y-1/2 items-center justify-center rounded-full border-2 border-[#5b21b6]/50 shadow-[0_0_15px_rgba(124,58,237,0.6)]"
             animate={{ opacity: isOpened ? 0 : 1 }}
             transition={{ duration: 0.3 }}
           >
@@ -156,7 +159,7 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
       <AnimatePresence>
         {!isOpened && (
           <motion.div
-            className="text-romantic-pink/80 absolute right-0 bottom-10 left-0 animate-bounce text-center font-medium"
+            className="absolute right-0 bottom-10 left-0 animate-pulse text-center font-medium text-white/90 drop-shadow-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

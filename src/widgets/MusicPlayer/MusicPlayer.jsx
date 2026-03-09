@@ -36,7 +36,7 @@ export const MusicPlayer = () => {
         id="muteButton"
         onClick={toggleMute}
         aria-label="Control de música"
-        className="text-romantic-pink hover:text-romantic-hover flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-white text-2xl shadow-md transition-all hover:scale-105"
+        className="bg-romantic-purple hover:bg-romantic-hover-purple shadow-romantic-purple/40 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full text-xl text-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
       >
         {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
       </button>

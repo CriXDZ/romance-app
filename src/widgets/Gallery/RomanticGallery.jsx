@@ -1,36 +1,103 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 import picture1 from "@shared/assets/img/Picture01.webp";
 import picture2 from "@shared/assets/img/Picture02.webp";
 import picture3 from "@shared/assets/img/Picture03.webp";
 import picture4 from "@shared/assets/img/Picture04.webp";
 
+const images = [picture1, picture2, picture3, picture4];
+
 export const RomanticGallery = () => {
+  const [lightboxSrc, setLightboxSrc] = useState(null);
+
   return (
-    <div className="py-2">
-      <h1 className="text-romantic-pink mb-6 text-center text-3xl font-bold drop-shadow-sm">
+    <div className="flex w-full flex-col items-center py-2">
+      <h1 className="font-romantic text-romantic-purple mb-8 text-center text-3xl tracking-wide drop-shadow-sm md:text-4xl">
         Para ti mi chica hermosa
       </h1>
-      <div className="grid grid-cols-2 gap-4">
-        <img
-          src={picture1}
-          alt="Romántica 1"
-          className="aspect-square h-auto w-full rounded-xl object-cover shadow-md transition-transform hover:scale-[1.02]"
-        />
-        <img
-          src={picture2}
-          alt="Romántica 2"
-          className="aspect-square h-auto w-full rounded-xl object-cover shadow-md transition-transform hover:scale-[1.02]"
-        />
-        <img
-          src={picture3}
-          alt="Romántica 3"
-          className="aspect-square h-auto w-full rounded-xl object-cover shadow-md transition-transform hover:scale-[1.02]"
-        />
-        <img
-          src={picture4}
-          alt="Romántica 4"
-          className="aspect-square h-auto w-full rounded-xl object-cover shadow-md transition-transform hover:scale-[1.02]"
-        />
+
+      {/* Galería Colgante */}
+      <div className="relative mx-auto w-full max-w-[420px] px-1.5 py-6 md:px-0">
+        {/* Cuerda central */}
+        <div className="absolute top-4 bottom-4 left-1/2 z-0 w-1 -translate-x-1/2 rounded-full bg-[#d8b4fe]/80 shadow-[0_0_8px_rgba(216,180,254,0.6)]"></div>
+
+        <div className="relative z-10 flex w-full flex-col gap-10 sm:gap-14">
+          {images.map((src, i) => {
+            const isRight = i % 2 === 0;
+            return (
+              <div
+                key={i}
+                className={`flex w-full ${isRight ? "justify-end" : "justify-start"}`}
+              >
+                <div
+                  className={`relative w-[68%] cursor-zoom-in rounded-xl border border-white/60 bg-white p-2 pb-8 shadow-xl transition-all duration-300 hover:z-20 hover:scale-[1.03] hover:shadow-2xl ${
+                    isRight ? "rotate-3" : "-rotate-3"
+                  }`}
+                  style={{ transformOrigin: "top center" }}
+                  onClick={() => setLightboxSrc(src)}
+                >
+                  {/* Pin conectando a la cuerda */}
+                  <div
+                    className="bg-romantic-purple absolute top-[-10px] z-30 flex h-6 w-6 items-center justify-center rounded-full border-[3px] border-white shadow-md"
+                    style={{
+                      [isRight ? "left" : "right"]: "18%",
+                      transform: isRight
+                        ? "translateX(-50%)"
+                        : "translateX(50%)",
+                    }}
+                  >
+                    <div className="h-1.5 w-1.5 rounded-full bg-white/50"></div>
+                  </div>
+
+                  <img
+                    src={src}
+                    alt={`Foto ${i + 1}`}
+                    loading="lazy"
+                    className="pointer-events-none aspect-[4/5] w-full rounded-lg object-cover shadow-inner sm:aspect-square"
+                  />
+
+                  {/* Etiqueta / Decoración suave */}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-2 text-center font-sans text-[11px] text-gray-400 opacity-60">
+                    Toca para ampliar 🔍
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
+
+      {/* Lightbox de ampliación */}
+      <AnimatePresence>
+        {lightboxSrc && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setLightboxSrc(null)}
+            className="fixed inset-0 z-[200] flex cursor-zoom-out items-center justify-center bg-black/92 p-4"
+          >
+            <motion.img
+              initial={{ scale: 0.85, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.85, opacity: 0 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+              src={lightboxSrc}
+              alt="Vista ampliada"
+              className="max-h-[90vh] max-w-[95vw] rounded-2xl object-contain shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button
+              onClick={() => setLightboxSrc(null)}
+              className="absolute top-5 right-5 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white/20 text-xl font-bold text-white shadow-md backdrop-blur-sm transition-all hover:bg-white/40"
+              aria-label="Cerrar imagen"
+            >
+              ✕
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
