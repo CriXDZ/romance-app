@@ -68,20 +68,25 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
           animate={
             isLetterVisible
               ? {
-                  top: "-50px", // CENTRADO: Cubre perfectamente la unión inferior del sobre
+                  top: ["10px", "-160px", "-160px", "-50px"], // REBOTE: Sube alto, pausa mini, baja al centro
                   height: "320px",
                   scale: 1.05,
-                  zIndex: 50,
+                  zIndex: [10, 10, 50, 50], // Sube por detrás, se pone al frente al bajar
                   boxShadow:
                     "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                 }
               : { top: "10px", height: "200px", zIndex: 10 }
           }
           transition={{
-            zIndex: { delay: isLetterVisible ? 0.4 : 0 },
-            type: "spring",
-            stiffness: 70,
-            damping: 15,
+            top: {
+              delay: 0.1,
+              duration: 1.5,
+              ease: "easeInOut",
+              times: [0, 0.3, 0.4, 1],
+            },
+            height: { delay: 0.1, duration: 1.2 },
+            zIndex: { duration: 1.5, times: [0, 0.3, 0.4, 1] },
+            scale: { type: "spring", stiffness: 80, damping: 12, delay: 0.4 },
           }}
         >
           <div className="border-romantic-purple/30 flex h-full w-full flex-col items-center justify-center gap-2 rounded border-2 border-dashed p-4">
@@ -144,13 +149,17 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
             style={{ clipPath: "polygon(0 0, 50% 100%, 100% 0)" }}
           />
 
-          {/* Wax Seal Protegido de Recorte (Not clipped by polygon) */}
+          {/* Heart Seal Explosivo (Sin circulo) */}
           <motion.div
-            className="bg-romantic-purple absolute bottom-0 z-[60] flex h-12 w-12 translate-y-1/2 items-center justify-center rounded-full border-2 border-[#5b21b6]/50 shadow-[0_0_15px_rgba(124,58,237,0.6)]"
-            animate={{ opacity: isOpened ? 0 : 1 }}
-            transition={{ duration: 0.3 }}
+            className="text-romantic-purple absolute bottom-0 z-[60] flex translate-y-1/2 items-center justify-center text-5xl drop-shadow-[0_0_15px_rgba(124,58,237,0.8)]"
+            animate={{
+              opacity: isOpened ? 0 : 1,
+              scale: isOpened ? 3 : 1, // Explosión al abrir
+              rotate: isOpened ? 15 : 0,
+            }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <FaHeart className="text-xl text-white/80" />
+            <FaHeart />
           </motion.div>
         </motion.div>
       </div>
