@@ -3,7 +3,7 @@ import loveImg from "@shared/assets/img/amor-mobile.webp";
 export const RomanticContent = () => {
   return (
     <div className="flex flex-col items-center gap-8 px-4 py-10 text-center">
-      <h1 className="font-romantic text-romantic-purple text-3xl tracking-wide text-balance drop-shadow-sm md:text-5xl">
+      <h1 className="font-romantic text-romantic-purple animate-sway text-3xl tracking-wide text-balance drop-shadow-sm md:text-5xl">
         En mi corazón, tú eres la respuesta
       </h1>
 
@@ -12,13 +12,13 @@ export const RomanticContent = () => {
         {/* Costura perimetral decorativa */}
         <div className="pointer-events-none absolute inset-2 rounded-xl border-2 border-dashed border-purple-300 opacity-60 md:inset-4" />
 
-        <div className="relative z-10 flex flex-col gap-6 font-sans text-base leading-relaxed text-gray-800 md:text-xl md:leading-loose">
+        <div className="relative z-10 flex flex-col gap-6 text-justify font-sans text-base leading-relaxed text-gray-800 md:text-xl md:leading-loose">
           <p>
             Acepto que no puedo controlar el destino, pero hoy decido tomar las
             riendas de mi presente. No estoy aquí por un impulso, ni por el
             miedo a la soledad; estoy aquí porque después de recorrer cada
             pensamiento, siempre llego a la misma conclusión:{" "}
-            <span className="font-bold text-purple-700">eres tú</span>.
+            <span className="font-bold text-purple-700">¡Eres tú!</span>
           </p>
 
           <p>
@@ -30,9 +30,9 @@ export const RomanticContent = () => {
 
           <p>
             He descubierto que mi hogar no es un lugar físico, sino ese espacio
-            de paz que solo encuentro en tu mirada. Prometo no solo estar a tu
-            lado, sino ser el hombre que te dé la seguridad de que, pase lo que
-            pase, nunca tendrás que caminar sola.
+            de paz que solo encuentro en ti. Prometo no solo estar a tu lado,
+            sino ser el hombre que te dé la seguridad de que, pase lo que pase,
+            nunca tendrás que caminar sola.
           </p>
 
           <p className="font-medium">
