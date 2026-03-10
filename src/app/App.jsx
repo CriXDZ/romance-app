@@ -32,8 +32,12 @@ function App() {
           repeat: Infinity,
           ease: "linear",
         }}
-        className="pointer-events-none fixed inset-0 z-[-1] min-h-[100dvh] w-full"
-        style={{ willChange: "background-color" }}
+        className="pointer-events-none fixed inset-[-10%] z-[-1] h-[120%] w-[120%] overflow-hidden"
+        style={{
+          backgroundColor: "#8b5cf6",
+          backfaceVisibility: "hidden",
+          transform: "translateZ(0)",
+        }}
       />
       <MusicPlayer />
       <Router>

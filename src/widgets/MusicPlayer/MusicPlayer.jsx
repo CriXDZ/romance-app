@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
-import musicFile from "@shared/assets/audio/audio.opus";
+import musicFile from "@shared/assets/audio/audio.mp3";
 
 export const MusicPlayer = () => {
   const [isMuted, setIsMuted] = useState(true);

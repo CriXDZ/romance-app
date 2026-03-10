@@ -38,7 +38,7 @@ export const ResponsePage = ({ responseMessage }) => {
 
         {/* Estilo Polaroid para la Imagen */}
         <div className="relative mx-auto mb-10 w-full max-w-[300px]">
-          <div className="rotate-2 rounded-xl border border-purple-100 bg-gradient-to-br from-white to-[#f9f7ff] p-3 pb-12 shadow-2xl transition-transform hover:rotate-0">
+          <div className="rotate-2 rounded-xl border border-purple-100 bg-gradient-to-br from-white to-[#f9f7ff] p-3 pb-12 shadow-2xl transition-transform md:hover:rotate-0">
             <img
               src={responseImg}
               alt="Nuestro futuro"
@@ -55,7 +55,8 @@ export const ResponsePage = ({ responseMessage }) => {
 
         <p className="mb-8 text-lg leading-relaxed font-medium text-gray-800 italic">
           &quot;A partir de hoy, cada paso que demos lo daremos juntos. Prometo
-          cuidarte, respetarte y amarte con cada fibra de mi ser.&quot;
+          cuidarte, respetarte y amarte con cada fibra de mi ser Grisbelys Nicol
+          Contreras Cañizalez&quot;
         </p>
 
         <Link

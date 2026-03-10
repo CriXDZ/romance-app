@@ -22,7 +22,7 @@ export const NoResponsePage = ({ responseMessage }) => {
 
         {/* Polaroid con la ecuación lúdica */}
         <div className="relative mx-auto mb-10 w-full max-w-[320px]">
-          <div className="-rotate-1 rounded-xl border border-purple-100 bg-gradient-to-br from-white to-[#f8f9fa] p-3 pb-12 shadow-xl transition-all hover:rotate-0">
+          <div className="-rotate-1 rounded-xl border border-purple-100 bg-gradient-to-br from-white to-[#f8f9fa] p-3 pb-12 shadow-xl transition-all md:hover:rotate-0">
             <div className="aspect-square w-full overflow-hidden rounded-lg border border-purple-50 bg-white shadow-inner">
               <img
                 src={noResponseImg}
