@@ -68,21 +68,21 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
           animate={
             isLetterVisible
               ? {
-                  top: ["10px", "-160px", "-160px", "-50px"], // REBOTE: Sube alto, pausa mini, baja al centro
+                  top: ["10px", "-160px", "-160px", "-50px"], // REBOTE
                   height: "320px",
                   scale: 1.05,
-                  zIndex: [10, 10, 50, 50], // Sube por detrás, se pone al frente al bajar
+                  zIndex: [10, 10, 50, 50],
                   boxShadow:
-                    "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                    "0 25px 50px -12px rgba(124, 58, 237, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                 }
               : { top: "10px", height: "200px", zIndex: 10 }
           }
           transition={{
             top: {
               delay: 0.1,
-              duration: 1.5,
-              ease: "easeInOut",
-              times: [0, 0.3, 0.4, 1],
+              duration: 1.8,
+              ease: [0.34, 1.56, 0.64, 1], // Custom bounce-back cubic-bezier
+              times: [0, 0.3, 0.45, 1],
             },
             height: { delay: 0.1, duration: 1.2 },
             zIndex: { duration: 1.5, times: [0, 0.3, 0.4, 1] },
@@ -118,17 +118,17 @@ export const EnvelopeScene = ({ onOpenComplete }) => {
         <div className="pointer-events-none absolute inset-0 z-30">
           {/* Left Flap */}
           <div
-            className="border-romantic-purple/20 absolute top-0 bottom-0 left-0 w-1/2 rounded-l-2xl border-t border-r bg-[#fbf8ff] shadow-[2px_0_10px_rgba(0,0,0,0.04)]"
+            className="border-romantic-purple/10 absolute top-0 bottom-0 left-0 w-1/2 rounded-l-2xl border-t border-r bg-gradient-to-br from-[#fdfaff] to-[#f3f0ff] shadow-[4px_0_15px_rgba(0,0,0,0.02)]"
             style={{ clipPath: "polygon(0 0, 100% 50%, 0 100%)" }}
           ></div>
           {/* Right Flap */}
           <div
-            className="border-romantic-purple/20 absolute top-0 right-0 bottom-0 w-1/2 rounded-r-2xl border-t border-l bg-[#fbf8ff] shadow-[-2px_0_10px_rgba(0,0,0,0.04)]"
+            className="border-romantic-purple/10 absolute top-0 right-0 bottom-0 w-1/2 rounded-r-2xl border-t border-l bg-gradient-to-bl from-[#fdfaff] to-[#f3f0ff] shadow-[-4px_0_15px_rgba(0,0,0,0.02)]"
             style={{ clipPath: "polygon(100% 0, 0 50%, 100% 100%)" }}
           ></div>
           {/* Bottom Flap */}
           <div
-            className="border-romantic-purple/20 absolute bottom-0 left-0 h-1/2 w-full rounded-b-2xl border-t bg-[#f7f4ff] shadow-[0_-4px_10px_rgba(0,0,0,0.04)]"
+            className="border-romantic-purple/20 absolute bottom-0 left-0 h-1/2 w-full rounded-b-2xl border-t bg-gradient-to-t from-[#f0ebff] to-[#f7f4ff] shadow-[0_-8px_20px_rgba(0,0,0,0.03)]"
             style={{ clipPath: "polygon(0 100%, 50% 0, 100% 100%)" }}
           ></div>
         </div>

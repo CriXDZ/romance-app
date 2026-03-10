@@ -33,7 +33,7 @@ export const ProposalFlow = ({ setResponseMessage }) => {
       <button
         id="noButton"
         onClick={handleNoClick}
-        className="text-romantic-purple border-romantic-purple/30 flex-1 cursor-pointer rounded-2xl border-2 bg-[#eee6ff] px-6 py-4 text-lg font-medium transition-all duration-300 hover:bg-[#e0d4ff] active:scale-95 sm:max-w-[120px]"
+        className="text-romantic-purple border-romantic-purple/40 flex-1 cursor-pointer rounded-2xl border-2 bg-[#e9d5ff] px-6 py-4 text-lg font-semibold transition-all duration-300 hover:bg-[#ddd0ff] active:scale-95 sm:max-w-[120px]"
       >
         No
       </button>

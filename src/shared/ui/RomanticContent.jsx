@@ -12,7 +12,7 @@ export const RomanticContent = () => {
         {/* Costura perimetral decorativa */}
         <div className="pointer-events-none absolute inset-2 rounded-xl border-2 border-dashed border-purple-300 opacity-60 md:inset-4" />
 
-        <div className="relative z-10 flex flex-col gap-6 text-justify font-sans text-base leading-relaxed text-gray-800 md:text-xl md:leading-loose">
+        <div className="font-romantic relative z-10 flex flex-col gap-6 text-justify text-base leading-relaxed text-gray-800 md:text-xl md:leading-loose">
           <p>
             Acepto que no puedo controlar el destino, pero hoy decido tomar las
             riendas de mi presente. No estoy aquí por un impulso, ni por el

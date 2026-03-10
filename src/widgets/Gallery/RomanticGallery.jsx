@@ -19,7 +19,7 @@ export const RomanticGallery = () => {
       </h1>
 
       {/* Galería Colgante */}
-      <div className="relative mx-auto w-full max-w-[420px] px-1.5 py-6 md:px-0">
+      <div className="relative mx-auto w-full max-w-[420px] px-8 py-6 md:px-0">
         {/* Cuerda central */}
         <div className="absolute top-4 bottom-4 left-1/2 z-0 w-1 -translate-x-1/2 rounded-full bg-[#d8b4fe]/80 shadow-[0_0_8px_rgba(216,180,254,0.6)]"></div>
 
@@ -32,7 +32,7 @@ export const RomanticGallery = () => {
                 className={`flex w-full ${isRight ? "justify-end" : "justify-start"}`}
               >
                 <div
-                  className={`relative w-[68%] cursor-zoom-in rounded-xl border border-white/60 bg-white p-2 pb-8 shadow-xl transition-all duration-300 hover:z-20 hover:scale-[1.03] hover:shadow-2xl ${
+                  className={`relative w-full max-w-[230px] cursor-zoom-in rounded-xl border border-white/60 bg-gradient-to-br from-white to-[#f9f7ff] p-2 pb-10 shadow-lg transition-all duration-300 sm:max-w-[250px] ${
                     isRight ? "rotate-3" : "-rotate-3"
                   }`}
                   style={{ transformOrigin: "top center" }}
@@ -64,9 +64,9 @@ export const RomanticGallery = () => {
                   />
 
                   {/* Pie de foto con decoración de corazón */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-2 flex items-center justify-center gap-1.5 opacity-60">
+                  <div className="pointer-events-none absolute inset-x-0 bottom-3 flex items-center justify-center gap-1.5 opacity-60">
                     <FaHeart className="text-romantic-purple text-[10px]" />
-                    <div className="h-0.5 w-6 rounded-full bg-gray-200" />
+                    <div className="h-0.5 w-6 rounded-full bg-purple-200" />
                     <FaHeart className="text-romantic-purple text-[10px]" />
                   </div>
                 </div>

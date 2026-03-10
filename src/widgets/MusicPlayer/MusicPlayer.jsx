@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 import musicFile from "@shared/assets/audio/audio.opus";
 
@@ -32,14 +33,38 @@ export const MusicPlayer = () => {
   return (
     <div className="fixed top-4 right-4 z-[9999]">
       <audio ref={audioRef} src={musicFile} loop />
-      <button
+      <motion.button
         id="muteButton"
         onClick={toggleMute}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        animate={{
+          boxShadow: isMuted
+            ? "0 4px 15px rgba(139,92,246,0.2)"
+            : [
+                "0 0 0px rgba(139,92,246,0)",
+                "0 0 20px rgba(139,92,246,0.6)",
+                "0 0 0px rgba(139,92,246,0)",
+              ],
+        }}
+        transition={{
+          boxShadow: { repeat: Infinity, duration: 2, ease: "easeInOut" },
+        }}
         aria-label="Control de música"
-        className="bg-romantic-purple hover:bg-romantic-hover-purple animate-heartbeat flex h-12 w-12 cursor-pointer items-center justify-center rounded-full text-xl text-white shadow-[0_4px_15px_rgba(139,92,246,0.3)] transition-all duration-500 hover:scale-110 hover:shadow-[0_0_25px_rgba(139,92,246,0.6)] active:scale-95"
+        className="bg-romantic-purple flex h-12 w-12 cursor-pointer items-center justify-center rounded-full text-xl text-white shadow-lg transition-colors duration-300"
       >
-        {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-      </button>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={isMuted ? "muted" : "playing"}
+            initial={{ opacity: 0, rotate: -45 }}
+            animate={{ opacity: 1, rotate: 0 }}
+            exit={{ opacity: 0, rotate: 45 }}
+            transition={{ duration: 0.2 }}
+          >
+            {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+          </motion.div>
+        </AnimatePresence>
+      </motion.button>
     </div>
   );
 };

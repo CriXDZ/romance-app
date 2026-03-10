@@ -76,6 +76,17 @@
     margin: 0;
     padding: 0;
   }
+
+  /* Capa de vignette suave para profundidad */
+  body::before {
+    content: "";
+    @apply pointer-events-none fixed inset-0 z-50;
+    background: radial-gradient(
+      circle at center,
+      transparent 20%,
+      rgba(0, 0, 0, 0.12) 100%
+    );
+  }
 }
 
 /* Custom Utilities if needed */
