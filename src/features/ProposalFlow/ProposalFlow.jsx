@@ -6,18 +6,15 @@ export const ProposalFlow = ({ setResponseMessage }) => {
 
   const handleYesClick = () => {
     const date = formatDateLong(new Date());
-    setResponseMessage(
-      <span>
-        Nuestra relación comienza el:
-        <br />
-        <span style={{ color: "#FF5733" }}>{date}</span>
-      </span>
-    );
+    setResponseMessage({
+      title: "¡Sí! ¡Mil veces sí!",
+      date: date,
+    });
     navigate("/respuesta");
   };
 
   const handleNoClick = () => {
-    setResponseMessage("Vale, pero primero me tienes que resolver esto:");
+    setResponseMessage("¡Alto ahí!");
     navigate("/norespuesta");
   };
 
