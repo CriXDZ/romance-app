@@ -15,7 +15,7 @@ export const RomanticGallery = () => {
   return (
     <div className="flex w-full flex-col items-center py-2">
       <h1 className="font-romantic text-romantic-purple animate-sway mb-8 text-center text-3xl tracking-wide drop-shadow-sm md:text-4xl">
-        Grisbelys Nicol Contreras Cañizalez mi dulce amor
+        Grisbelys Nicol Contreras Cañizalez
       </h1>
 
       {/* Galería Colgante */}
