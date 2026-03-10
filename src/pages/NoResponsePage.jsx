@@ -11,7 +11,7 @@ export const NoResponsePage = ({ responseMessage }) => {
         animate={{ opacity: 1, y: 0 }}
         className="font-romantic relative w-full max-w-[500px] rounded-3xl bg-white/95 p-8 text-center shadow-[0_20px_50px_rgba(0,0,0,0.15)] backdrop-blur-md"
       >
-        <div className="bg-romantic-purple/30 absolute top-0 left-0 h-2 w-full opacity-60"></div>
+        <div className="bg-romantic-purple/30 absolute top-0 left-0 h-2 w-full rounded-t-3xl opacity-60"></div>
 
         <h1
           id="responseMessage"
